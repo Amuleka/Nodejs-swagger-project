@@ -5,8 +5,8 @@ const doc = {
     title: 'My API',
     description: 'Contact API',
   },
-  host: 'cse341-amulek-new-project.onrender.com',
-  schemes: ['https']
+  host: 'localhost:8080',
+  schemes: ['http']
 };
 
 const outputFile = './swagger.json';
