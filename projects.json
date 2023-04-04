@@ -1,0 +1,25 @@
+{
+  "project1": {
+    "projectName": "Node Application",
+    "projectUser": "Moises Cardenas",
+    "projectDueDate": "04-15-2023",
+    "projectCompany": "Google",
+    "projectTeamMembers": 5
+  },
+
+  "project2": {
+    "projectName": ".NET toDoList",
+    "projectUser": "Jaime Corral",
+    "projectDueDate": "04-20-2023",
+    "projectCompany": "Microsoft/Azure",
+    "projectTeamMembers": 3
+  },
+
+  "project3": {
+    "projectName": "PHP Motors",
+    "projectUser": "Sharon Angulo",
+    "projectDueDate": "04-10-2023",
+    "projectCompany": "WordPress",
+    "projectTeamMembers": 10
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "client1": {
+    "clientName": "Office Depot",
+    "clientCity": "Provo",
+    "userInCharge": "Moises Cardenas",
+    "yearsWithTheCompany": 3
+  },
+
+  "client2": {
+    "clientName": "Best Buy",
+    "clientCity": "Salt Lake City",
+    "userInCharge": "Jaime Corral",
+    "yearsWithTheCompany": 5
+  },
+
+  "client3": {
+    "clientName": "Rancheritos",
+    "clientCity": "Orem",
+    "userInCharge": "Sharon Angulo",
+    "yearsWithTheCompany": 2
+  }
+}

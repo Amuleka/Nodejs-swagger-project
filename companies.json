@@ -1,0 +1,25 @@
+{
+  "company1": {
+    "companyName": "Meta",
+    "companyFounder": "Mark Zuckerberg",
+    "companyHeadquarters": "Menlo Park, California, United States",
+    "companyFoundationDate": "02-2004",
+    "companyCEO": "Mark Zuckerberg"
+  },
+
+  "company2": {
+    "companyName": "Google",
+    "companyFounder": "Larry Page",
+    "companyHeadquarters": "Mountain View, California, United States",
+    "companyFoundationDate": "09-04-1998",
+    "companyCEO": "Sundar Pichai"
+  },
+
+  "company3": {
+    "companyName": "Tesla",
+    "companyFounder": "Elon Musk",
+    "companyHeadquarters": "Austin, Texas, United States",
+    "companyFoundationDate": "07-01-2003",
+    "companyCEO": "Elon Musk"
+  }
+}

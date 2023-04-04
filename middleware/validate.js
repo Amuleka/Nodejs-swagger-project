@@ -11,6 +11,7 @@ const saveContact = (req, res, next) => {
         graduation: 'string',
         favoriteSong: 'required|string',
     };
+        
     validator(req.body, validationRule, {}, (err, status) => {
         if (!status) {
             res.status(412).send({

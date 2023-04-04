@@ -1,11 +1,12 @@
 const mongodb = require('../db/connect');
 const ObjectId = require('mongodb').ObjectId;
 
-const getAll =  (req, res) => {
+// Projects Collection Functions
+const getAllProjects =  (req, res) => {
  mongodb
  .getDB()
  .db('new-project')
- .collection('project')
+ .collection('projects')
  .find()
  .toArray((err, lists) => {
   if (err) {
@@ -16,7 +17,7 @@ const getAll =  (req, res) => {
  });
 };
 
-const getSingle =  (req, res) => {
+const getSingleProject =  (req, res) => {
   if (!ObjectId.isValid(req.params.id)) {
     res.status(400).json('Must use a valid contact id to find a contact. ');
   }
@@ -24,7 +25,7 @@ const getSingle =  (req, res) => {
   mongodb
   .getDB()
   .db('new-project')
-  .collection('project')
+  .collection('projects')
   .find({_id: userId})
   .toArray((err, result) => {
    if (err) {
@@ -35,18 +36,15 @@ const getSingle =  (req, res) => {
   });
  };
 
-const createNewContact = async (req, res) => {
+const createNewProject = async (req, res) => {
   const contact = {
-    firstName: req.body.firstName,
-    lastName: req.body.lastName,
-    email: req.body.email,
-    favoriteCompany: req.body.favoriteCompany,
-    birthday: req.body.birthday,
-    major: req.body.major,
-    graduation: req.body.graduaction,
-    favoriteSong: req.body.favoriteSong
+    projectName: req.body.projectName,
+    projectUser: req.body.projectUser,
+    projectDueDate: req.body.projectDueDate,
+    projectCompany: req.body.projectCompany,
+    projectTeamMembers: req.body.projectTeamMembers,
   };
-  const response = await mongodb.getDB().db('new-project').collection('project').insertOne(contact);
+  const response = await mongodb.getDB().db('new-project').collection('projects').insertOne(contact);
   if (response.acknowledged) {
     res.status(201).json(response);
   } else {
@@ -54,26 +52,23 @@ const createNewContact = async (req, res) => {
   }
 };
 
-const updateExistingContact = async (req, res) => {
+const updateExistingProject = async (req, res) => {
   if (!ObjectId.isValid(req.params.id)) {
     res.status(400).json('Must use a valid contact id to update a contact. ');
   }
   const userId = new ObjectId(req.params.id);
   // be aware of updateOne if you only want to update specific fields
   const contact = {
-    firstName: req.body.firstName,
-    lastName: req.body.lastName,
-    email: req.body.email,
-    favoriteCompany: req.body.favoriteCompany,
-    birthday: req.body.birthday,
-    major: req.body.major,
-    graduation: req.body.graduaction,
-    favoriteSong: req.body.favoriteSong
+    projectName: req.body.projectName,
+    projectUser: req.body.projectUser,
+    projectDueDate: req.body.projectDueDate,
+    projectCompany: req.body.projectCompany,
+    projectTeamMembers: req.body.projectTeamMembers,
   };
   const response = await mongodb
     .getDB()
     .db('new-project')
-    .collection('project')
+    .collection('projects')
     .replaceOne({ _id: userId }, contact);
   console.log(response);
   if (response.modifiedCount > 0) {
@@ -83,12 +78,12 @@ const updateExistingContact = async (req, res) => {
   }
 };
 
-const deleteSomeContact = async (req, res) => {
+const deleteSomeProject = async (req, res) => {
   if (!ObjectId.isValid(req.params.id)) {
     res.status(400).json('Must use a valid contact id to delete a contact. ');
   }
   const userId = new ObjectId(req.params.id);
-  const response = await mongodb.getDB().db('new-project').collection('project').deleteOne({ _id: userId }, true);
+  const response = await mongodb.getDB().db('new-project').collection('projects').deleteOne({ _id: userId }, true);
   console.log(response);
   if (response.deletedCount > 0) {
     res.status(204).send();
@@ -96,5 +91,6 @@ const deleteSomeContact = async (req, res) => {
     res.status(500).json(response.error || 'Some error occurred while deleting the contact.');
   }
 };
+ 
 
-module.exports = { getAll, getSingle, createNewContact, updateExistingContact, deleteSomeContact };
+module.exports = { getAllProjects, getSingleProject, createNewProject, updateExistingProject, deleteSomeProject};

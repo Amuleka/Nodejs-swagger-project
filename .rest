@@ -7,6 +7,7 @@ GET http://localhost:8080/project/ HTTP/1.1
 POST http://localhost:8080/contacts HTTP/1.1
 Content-Type: application/json
 
+// Users Collection
 {
     "firstName": "Sharon",
     "lastName": "Angulo",
@@ -16,6 +17,32 @@ Content-Type: application/json
     "major": "Business Management",
     "graduation": "2023-06-21",
     "favoriteSong": "Rude"
+}
+
+// Companies Collection
+{
+    "companyName": "Tesla",
+    "companyFounder": "Elon Musk",
+    "companyHeadquarters": "Austin, Texas, United States",
+    "companyFoundationDate": "07-01-2003",
+    "companyCEO": "Elon Musk"
+}
+
+// Clients Collection
+{
+    "clientName": "Rancheritos",
+    "clientCity": "Orem",
+    "userInCharge": "Sharon Angulo",
+    "yearsWithTheCompany": 2
+}
+
+// Projects Collection
+{
+    "projectName": "PHP Motors",
+    "projectUser": "Sharon Angulo",
+    "projectDueDate": "04-10-2023",
+    "projectCompany": "WordPress",
+    "projectTeamMembers": 10
 }
 
 // Render New Project
