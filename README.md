@@ -6,7 +6,7 @@ I'm using an MVC architecture to separate business logic, API calls, and initial
 
 I wanted to show how easy it is to create API documentation for yourself and also for your team. Anyone can write clean API documentation using swagger npm packages since the beginning of your project.
 
-[Software Demo Video](https://www.youtube.com/watch?v=Oy2lRO4GZK8)
+[Software Demo Video](https://www.youtube.com/watch?v=hDCvIPjauHs)
 
 # Development Environment
 
